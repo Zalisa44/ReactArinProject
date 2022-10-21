@@ -3,23 +3,12 @@ import ReactDOM from 'react-dom'
 
 
 const names =['Atilla','Zehra','Zeynep']
-const data='React Button'
+
 function App () {
     return(
      <div>
 
         {names.map(name=>(<h2>{name}</h2>))}
-        <button
-      type="button"
-      style=
-      { { padding: '10px',
-        color: 'white',
-        backgroundColor: 'red',
-        border: '2px solid yellow'}}
-      
-    >
-      {data}
-    </button>
      </div>
     ) 
 }
