@@ -1,26 +1,35 @@
 import React from "react";
 
-const Collapse = (props) => {
-  console.log(props);
-  return (
-    <div>
-      <p>
-        <a
-          className="btn btn-primary w-100"
-          data-bs-toggle="collapse"
-          href={"#".concat(props.href)}
-          role="button"
-          aria-expanded="false"
-          aria-controls="collapseExample"
-        >
-          Link with href
-        </a>
-      </p>
-      <div className="collapse show" id={props.href}>
-        {props.children}
+class Collapse extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      showContent: false,
+    };
+  }
+
+  changeContetent = () => {
+    this.setState({
+      showContent: !this.state.showContent,
+    });
+  };
+  render() {
+    return (
+      <div>
+        <p>
+          <button
+            className="btn btn-primary w-100"
+            onClick={this.changeContetent}
+          >
+            Link with href
+          </button>
+        </p>
+        {this.state.showContent ? (
+          <div className="collapse show">{this.props.children}</div>
+        ) : null}
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default Collapse;

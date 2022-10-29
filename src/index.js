@@ -11,7 +11,7 @@ const App = () => {
           <div className="col">
             <Collapse href="collapseExample1">
               <Card
-                cardTitle="Fenerbahce"
+                cardTitle="Fenarbahce"
                 cartText="lorem ipsum dfelldfdf ifsdfds"
                 updatedTime="update 1 min ago"
                 pic="https://picsum.photos/id/1/200/300"
@@ -31,7 +31,6 @@ const App = () => {
           <div className="col">
             <Collapse href="collapseExample3">
               <Card
-                cardTitle="Galatasaray"
                 cartText="lorem ipsum dfelldfdf 3"
                 updatedTime="update 4 min ago"
                 pic="https://picsum.photos/id/100/200/300"
