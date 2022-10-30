@@ -14,6 +14,7 @@ class Collapse extends React.Component {
     });
   };
   render() {
+    console.log(this.props.children);
     return (
       <div>
         <p>
@@ -21,11 +22,17 @@ class Collapse extends React.Component {
             className="btn btn-primary w-100"
             onClick={this.changeContetent}
           >
-            Link with href
+            {/* {this.props.children.props.cardTitle} */}
+            {React.Children.map(
+              this.props.children,
+              (child) => child.props.cardTitle
+            )}
           </button>
         </p>
         {this.state.showContent ? (
-          <div className="collapse show">{this.props.children}</div>
+          <div className="collapse show">
+            {React.Children.map(this.props.children, (children) => children)}
+          </div>
         ) : null}
       </div>
     );
